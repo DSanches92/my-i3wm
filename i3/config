@@ -1,0 +1,75 @@
+font pango:GeistMono Nerd Font 10
+
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+
+exec_always --no-startup-id picom -b
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+exec_always --no-startup-id setxkbmap -layout br -model abnt2
+exec_always --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
+
+bindsym Mod4+Return exec alacritty
+bindsym Mod4+Shift+e exec --no-startup-id alacritty -e yazi
+bindsym Mod4+d exec --no-startup-id ~/.config/dmenu/dmenu-run.sh
+bindsym Mod4+p exec --no-startup-id ~/.config/dmenu/passmenu-run.sh
+bindsym Mod4+q kill
+bindsym Mod4+b exec firefox
+bindsym Mod4+e exec thunar
+bindsym Mod4+s exec steam
+
+# Paleta de Cores - Catppuccin Macchiato
+set $rosewater #f4dbd6
+set $flamingo  #f0c6c6
+set $pink      #f5bde6
+set $mauve     #c6a0f6
+set $red       #ed8796
+set $maroon    #ee99a0
+set $peach     #f5a97f
+set $yellow    #eed49f
+set $green     #a6da95
+set $teal      #8bd5ca
+set $sky       #91d7e3
+set $sapphire  #7dc4e4
+set $blue      #8aadf4
+set $lavender  #b7bdf8
+set $text      #cad3f5
+set $subtext1  #b8c0e0
+set $subtext0  #a5adcb
+set $overlay2  #939ab7
+set $overlay1  #8087a2
+set $overlay0  #6e738d
+set $surface2  #5b6078
+set $surface1  #494d64
+set $surface0  #363a4f
+set $base      #24273a
+set $mantle    #1e2030
+set $crust     #181926
+
+# Configuração das Bordas das Janelas (target, border, background, text, indicator, child_border)
+client.focused          $mauve $base $text $rosewater $mauve
+client.focused_inactive $overlay0 $base $text $rosewater $surface1
+client.unfocused        $overlay0 $base $subtext1 $rosewater $surface0
+client.urgent           $red $base $text $rosewater $red
+client.placeholder      $overlay0 $base $text $rosewater $surface0
+client.background       $base
+
+# Configuração da Barra (i3bar)
+bar {
+  font pango:GeistMono Nerd Font 10
+  status_command i3status
+  position bottom
+
+  colors {
+    background          $base
+    statusline          $text
+    separator           $mauve
+
+    # Tipo de janela    borda     fundo     texto
+    focused_workspace   $mauve    $surface0 $mauve
+    active_workspace    $surface2 $base     $text
+    inactive_workspace  $base     $base     $subtext1
+    urgent_workspace    $red      $base     $red
+    binding_mode        $red      $base     $red
+  }
+}

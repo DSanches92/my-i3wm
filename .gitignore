@@ -1,0 +1,13 @@
+dunst/
+gtk-*/
+kitty/
+pulse/
+mozilla/
+MangoHud/
+polybar/
+QtProject/
+rofi/
+systemd/
+Thunar/
+xfce*/
+pavucontrol.ini
