@@ -1,13 +1,13 @@
 font pango:GeistMono Nerd Font 10
 
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+exec --no-startup-id ~/.config/i3/anti-sleep.sh
 
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec_always --no-startup-id setxkbmap -layout br -model abnt2
 exec_always --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
-
 
 bindsym Mod4+Return exec alacritty
 bindsym Mod4+Shift+e exec --no-startup-id alacritty -e yazi
