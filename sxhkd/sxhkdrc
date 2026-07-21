@@ -1,0 +1,10 @@
+# Controle de Volume (Girar para cima / baixo)
+XF86AudioRaiseVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+XF86AudioLowerVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# Clique de Mute
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle

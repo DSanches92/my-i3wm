@@ -1,13 +1,20 @@
-dunst/
-gtk-*/
-kitty/
-pulse/
-mozilla/
-MangoHud/
-polybar/
-QtProject/
-rofi/
-systemd/
-Thunar/
-xfce*/
-pavucontrol.ini
+# Ignora tudo por padrão
+*
+
+# Libera apenas as suas pastas de configuração
+!alacritty/
+!alacritty/**
+!dmenu/
+!dmenu/**
+!i3/
+!i3/**
+!ly/
+!ly/**
+!sxhkd/
+!sxhkd/**
+!yazi/
+!yazi/**
+!zed/
+!zed/**
+
+!.gitignore
